@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1694632493734,
+      "tag": "0000_thin_thunderbolt_ross",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1694633023181,
+      "tag": "0001_mature_arachne",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1694633197395,
+      "tag": "0002_lyrical_red_skull",
+      "breakpoints": true
+    }
+  ]
+}

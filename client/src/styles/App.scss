@@ -1,0 +1,61 @@
+@use "./variables/colors";
+
+// #root {
+//   background-color: colors.$primary-color;
+// }
+
+// styles to fill out the page properly and main content too -----
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+// I have to apply this style to every page in order for main content to fill out the whole page
+.main_content {
+  flex-grow: 1;
+}
+
+// header styles -----
+.header_container {
+  background-color: colors.$primary-color;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  color: colors.$primary-color-text;
+}
+// I target all <img> elements inside element with class "header_logo"
+.header_logo {
+  img {
+    height: 2rem;
+  }
+}
+
+.header_navlinks {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  a {
+    font-size: 18px;
+  }
+}
+
+// footer styles -----
+
+.footer_container {
+  background-color: colors.$primary-color;
+}
+
+.footer_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 2%;
+
+  color: colors.$primary-color-text;
+
+  &_copyright::before {
+    content: "\00a9  ";
+  }
+}

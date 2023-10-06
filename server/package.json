@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "start": "tsc && node --env-file=.env ./dist/server.js",
+    "watch": "tsc --watch & node --env-file=.env --watch ./dist/server.js",
+    "debug": "node --env-file=.env --inspect-brk ./dist/server.js",
+    "drizzle_generate": "pnpm drizzle-kit generate:pg --config=./src/db/drizzle.config.ts",
+    "drizzle_push": "pnpm drizzle-kit push:pg --config=./src/db/drizzle.config.ts",
+    "drizzle_drop": "pnpm drizzle-kit drop --config=./src/db/drizzle.config.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.6.2",
+    "drizzle-orm": "^0.28.6",
+    "fastify": "^4.22.2",
+    "postgres": "^3.3.5"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.19.13"
+  }
+}
