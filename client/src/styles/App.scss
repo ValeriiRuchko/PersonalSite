@@ -55,7 +55,31 @@
 
   color: colors.$primary-color-text;
 
-  &_copyright::before {
-    content: "\00a9  ";
+  &_copyright {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &_socials {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    row-gap: 0.4rem;
+
+    img {
+      height: 1rem;
+      margin-left: 1rem;
+    }
+
+    &_items {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }
