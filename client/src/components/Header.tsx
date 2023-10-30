@@ -9,7 +9,9 @@ function Header() {
     <div className="header_container">
       <div className="header_content">
         <div className="header_logo">
-          <img src={plantLogo} />
+          <Link to="/">
+            <img src={plantLogo} />
+          </Link>
         </div>
         <div className="header_navlinks">
           <Link to="/">About me</Link>

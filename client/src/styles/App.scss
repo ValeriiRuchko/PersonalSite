@@ -13,8 +13,13 @@
 // I have to apply this style to every page in order for main content to fill out the whole page
 .main_content {
   flex-grow: 1;
+  padding: 3% 5%;
+  h1 {
+    color: colors.$secondary-color;
+    max-width: 40rem;
+    font-size: 36px;
+  }
 }
-
 // header styles -----
 .header_container {
   background-color: colors.$primary-color;
@@ -41,9 +46,29 @@
     font-size: 18px;
   }
 }
+// ----- ----- -----
+
+// introduction section
+.greetings_heading {
+  span {
+    text-decoration: underline;
+    color: colors.$primary-color-headings;
+  }
+
+  img {
+    height: 2rem;
+  }
+}
+
+.introduction_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4% 0;
+}
+// ----- ----- -----
 
 // footer styles -----
-
 .footer_container {
   background-color: colors.$primary-color;
 }
@@ -83,3 +108,4 @@
     }
   }
 }
+// ----- ----- -----
