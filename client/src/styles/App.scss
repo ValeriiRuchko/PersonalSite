@@ -12,6 +12,8 @@
 }
 // I have to apply this style to every page in order for main content to fill out the whole page
 .main_content {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   padding: 3% 5%;
   h1 {
@@ -62,9 +64,83 @@
 
 .introduction_section {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 4rem;
   padding: 4% 0;
+
+  &_card {
+    width: 40vw;
+    height: 35vh;
+    border-radius: 30px;
+    overflow: hidden;
+
+    &_title {
+      // display and position
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+      // size props
+      width: 40vw;
+      height: inherit;
+      border-radius: 30px;
+
+      // CRUCIAL FOR ANIMATION TO BE SUFFICIENT AND FOR CONTENT NOT TO CANCEL :hover
+      z-index: 1;
+
+      // text
+      font-size: 24px;
+      color: colors.$primary-color-text;
+
+      background-color: colors.$primary-color;
+      // here we specify to which property apply transition
+      // and how long in has to move
+      transition: all 1.5s;
+    }
+
+    .to_right_hover {
+      display: flex;
+      min-width: 90vw;
+      height: inherit;
+      justify-content: flex-start;
+    }
+
+    .to_left_hover {
+      display: flex;
+      min-width: 90vw;
+      height: inherit;
+      justify-content: flex-end;
+    }
+
+    .to_right_hover:hover &_title,
+    &_title:hover {
+      // and here we specify the change value of the property
+      // for the transition
+      margin-left: 50vw;
+    }
+
+    .to_left_hover:hover &_title,
+    &_title:hover {
+      // and here we specify the change value of the property
+      // for the transition
+      margin-right: 50vw;
+    }
+
+    &_content {
+      // display and position
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+      // otherwise the content will be invisible
+      position: absolute;
+
+      // size props
+      width: 40vw;
+      height: inherit;
+    }
+  }
 }
 // ----- ----- -----
 

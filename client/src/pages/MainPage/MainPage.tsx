@@ -1,3 +1,4 @@
+import IntroCard from "../../components/IntroCard";
 import "../../styles/App.scss";
 
 import hammerIcon from "/hammer-solid.svg";
@@ -18,12 +19,22 @@ function MainPage(props: MainPageProps) {
         </h1>
       </div>
       <div className="introduction_section">
-        <div className="introduction_section_my_journey">
-          <h2>How I started?</h2>
-        </div>
-        <div className="introduction_section_present">
-          <h2>What do I do now?</h2>
-        </div>
+        <IntroCard
+          title="How I started"
+          content={`They're using our own satellites against us. 
+          And the clock is ticking. 
+          Yeah, but John, if The Pirates of the Caribbean breaks down, 
+          the pirates don’t eat the tourists. Is this my espresso machine?`}
+          className={["introduction_section_card", "to_right_hover"]}
+        />
+        <IntroCard
+          title="What I do now"
+          content={`They're using our own satellites against us. 
+          And the clock is ticking. 
+          Yeah, but John, if The Pirates of the Caribbean breaks down, 
+          the pirates don’t eat the tourists. Is this my espresso machine?`}
+          className={["introduction_section_card", "to_left_hover"]}
+        />
       </div>
     </div>
   );
