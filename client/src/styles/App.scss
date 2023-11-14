@@ -94,37 +94,49 @@
       color: colors.$primary-color-text;
 
       background-color: colors.$primary-color;
-      // here we specify to which property apply transition
-      // and how long in has to move
+
       transition: all 1.5s;
     }
 
-    .to_right_hover {
+    .left_card {
       display: flex;
       min-width: 90vw;
       height: inherit;
       justify-content: flex-start;
     }
 
-    .to_left_hover {
+    .right_card {
       display: flex;
       min-width: 90vw;
       height: inherit;
       justify-content: flex-end;
     }
 
-    .to_right_hover:hover &_title,
-    &_title:hover {
-      // and here we specify the change value of the property
-      // for the transition
-      margin-left: 50vw;
+    //
+    .trigger_left {
+      animation-name: hoverLeft;
+      animation-duration: 1.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-play-state: running;
     }
 
-    .to_left_hover:hover &_title,
-    &_title:hover {
-      // and here we specify the change value of the property
-      // for the transition
-      margin-right: 50vw;
+    .cancel_left {
+      animation-name: cancelLeft;
+      animation-play-state: running;
+    }
+
+    .trigger_right {
+      animation-name: hoverRight;
+      animation-duration: 1.5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-play-state: running;
+    }
+
+    .cancel_right {
+      animation-name: cancelRight;
+      animation-play-state: running;
     }
 
     &_content {
@@ -142,6 +154,48 @@
     }
   }
 }
+
+// description of animation for "animation" property
+@keyframes hoverLeft {
+  from {
+    transform: translateX(0vw);
+  }
+
+  to {
+    transform: translateX(50vw);
+  }
+}
+
+@keyframes cancelLeft {
+  from {
+    transform: translateX(50vw);
+  }
+
+  to {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes hoverRight {
+  from {
+    transform: translateX(0vw);
+  }
+
+  to {
+    transform: translateX(-50vw);
+  }
+}
+
+@keyframes cancelRight {
+  from {
+    transform: translateX(-50vw);
+  }
+
+  to {
+    transform: translateX(0vw);
+  }
+}
+
 // ----- ----- -----
 
 // footer styles -----
