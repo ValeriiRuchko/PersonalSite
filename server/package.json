@@ -1,19 +1,25 @@
 {
   "scripts": {
-    "start": "tsc && node --env-file=.env ./dist/server.js",
-    "watch": "tsc --watch & node --env-file=.env --watch ./dist/server.js",
-    "debug": "node --env-file=.env --inspect-brk ./dist/server.js",
+    "dev": "tsc && node --env-file=.env ./dist/server.js & pnpm drizzle-kit studio --config=./src/db/drizzle.config.ts",
+    "dev-watch": "tsc --watch & node --env-file=.env --watch ./dist/server.js & pnpm drizzle-kit studio --config=./src/db/drizzle.config.ts",
+    "dev-debug": "node --env-file=.env --inspect-brk ./dist/server.js",
     "drizzle_generate": "pnpm drizzle-kit generate:pg --config=./src/db/drizzle.config.ts",
     "drizzle_push": "pnpm drizzle-kit push:pg --config=./src/db/drizzle.config.ts",
     "drizzle_drop": "pnpm drizzle-kit drop --config=./src/db/drizzle.config.ts"
   },
+  "imports": {
+    "#db_schema/*": "./dist/db/schema/*.js",
+    "#db_client": "./dist/db/drizzleClient.js"
+  },
+  "type": "module",
   "dependencies": {
     "@types/node": "^20.6.2",
-    "drizzle-orm": "^0.28.6",
+    "drizzle-orm": "^0.29.0",
     "fastify": "^4.22.2",
     "postgres": "^3.3.5"
   },
   "devDependencies": {
-    "drizzle-kit": "^0.19.13"
+    "drizzle-kit": "^0.20.2",
+    "pg": "^8.11.3"
   }
 }

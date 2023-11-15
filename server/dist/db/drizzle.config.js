@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
+export default {
     schema: "./src/db/schema/*",
     out: "./drizzle",
     driver: "pg",

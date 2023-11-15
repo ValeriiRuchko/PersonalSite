@@ -1,11 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.adminData = void 0;
-const pg_core_1 = require("drizzle-orm/pg-core");
-exports.adminData = (0, pg_core_1.pgTable)("admin_data", {
-    id: (0, pg_core_1.uuid)("id").primaryKey().defaultRandom(),
-    login: (0, pg_core_1.varchar)("login", { length: 255 }),
-    password_hash: (0, pg_core_1.varchar)("password_hash", { length: 255 }),
-    is_logged: (0, pg_core_1.boolean)("is_logged"),
+import { pgTable, uuid, varchar, boolean } from "drizzle-orm/pg-core";
+export const adminData = pgTable("admin_data", {
+    id: uuid("id").primaryKey().defaultRandom(),
+    login: varchar("login", { length: 255 }),
+    password_hash: varchar("password_hash", { length: 255 }),
+    is_logged: boolean("is_logged"),
 });
 //# sourceMappingURL=admin_data.js.map

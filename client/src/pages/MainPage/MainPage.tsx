@@ -18,8 +18,7 @@ function MainPage(props: MainPageProps) {
     "right_card",
   ]);
 
-  function triggerHover() {
-    console.log(window.scrollY);
+  function triggerCardMove() {
     if (window.scrollY > 200) {
       setLeft([...classesLeft, "trigger_left"]);
       setRight([...classesRight, "trigger_right"]);
@@ -36,12 +35,11 @@ function MainPage(props: MainPageProps) {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", triggerHover);
+    window.addEventListener("scroll", triggerCardMove);
 
     // cleanup function
     return () => {
-      window.removeEventListener("scroll", triggerHover);
-      console.log("removed");
+      window.removeEventListener("scroll", triggerCardMove);
     };
   }, []);
 
@@ -58,20 +56,24 @@ function MainPage(props: MainPageProps) {
       <div className="introduction_section">
         <IntroCard
           title="How I started"
-          content={`They're using our own satellites against us. 
-          And the clock is ticking. 
-          Yeah, but John, if The Pirates of the Caribbean breaks down, 
-          the pirates don’t eat the tourists. Is this my espresso machine?`}
+          content={`My journey begun in summer of 2022, as a simple university assignment,
+          which slowly started evolving into something bigger. At that time I completed
+          my first ever Udemy course about Web-Dev and when I finally grasped, how fascinating
+          and "not-so-easy-but-also-fun" it is.`}
           className={[...classesLeft]}
         />
         <IntroCard
           title="What I do now"
-          content={`They're using our own satellites against us. 
-          And the clock is ticking. 
-          Yeah, but John, if The Pirates of the Caribbean breaks down, 
-          the pirates don’t eat the tourists. Is this my espresso machine?`}
+          content={`Currently I'm an aspiring software engineer, who tries to become better
+          every day and also to hone my skills while doing some fun projects. I'm planning
+          to continue my journey with TypeScript and Node, but also occasionaly use Golang
+          to play around.`}
           className={[...classesRight]}
         />
+      </div>
+      <hr />
+      <div className="projects_section">
+        <h2>Projects and contributions</h2>
       </div>
     </div>
   );

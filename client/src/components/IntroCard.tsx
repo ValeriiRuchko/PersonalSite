@@ -14,11 +14,11 @@ function IntroCard(props: CardProps) {
             props.className.length === 2
               ? `${props.className[0]}_title`
               : `${props.className[0]}_title ${props.className
-                  .slice(2)
-                  .join(" ")}`
+                .slice(2)
+                .join(" ")}`
           }
         >
-          <h2>{props.title}</h2>
+          <h3>{props.title}</h3>
         </div>
         <div className={`${props.className[0]}_content`}>
           <p>{props.content}</p>

@@ -4,6 +4,12 @@
 //   background-color: colors.$primary-color;
 // }
 
+hr {
+  background-color: colors.$primary-color;
+  height: 1px;
+  border: none;
+}
+
 // styles to fill out the page properly and main content too -----
 .App {
   display: flex;
@@ -20,6 +26,11 @@
     color: colors.$secondary-color;
     max-width: 40rem;
     font-size: 36px;
+  }
+  h2 {
+    color: colors.$secondary-color;
+    max-width: 36rem;
+    font-size: 28px;
   }
 }
 // header styles -----
@@ -49,6 +60,8 @@
   }
 }
 // ----- ----- -----
+
+// MAIN PAGE STYLES START ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 
 // introduction section
 .greetings_heading {
@@ -90,10 +103,10 @@
       z-index: 1;
 
       // text
-      font-size: 24px;
-      color: colors.$primary-color-text;
+      font-size: 36px;
+      color: colors.$primary-color-headings;
 
-      background-color: colors.$primary-color;
+      background-color: colors.$secondary-color;
 
       transition: all 1.5s;
     }
@@ -151,6 +164,9 @@
       // size props
       width: 40vw;
       height: inherit;
+
+      color: colors.$primary-color;
+      font-size: 24px;
     }
   }
 }
@@ -197,6 +213,17 @@
 }
 
 // ----- ----- -----
+
+// my projects section
+.projects_section {
+  display: flex;
+  flex-direction: column;
+  padding: 4% 0;
+}
+
+// ----- ----- -----
+
+// MAIN PAGE STYLES END ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 
 // footer styles -----
 .footer_container {

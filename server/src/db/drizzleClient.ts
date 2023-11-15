@@ -2,9 +2,9 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 // migrations
 import { migrate } from "drizzle-orm/postgres-js/migrator";
+import drizzleConfig from "./drizzle.config.js";
 
 // db_credentials
-import drizzleConfig from "./drizzle.config";
 
 //db-client + connection
 const client = postgres(drizzleConfig.dbCredentials);

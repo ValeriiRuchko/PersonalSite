@@ -1,29 +1,16 @@
 // imports
 import Fastify from "fastify";
-
-// db_client
-import db from "./db/drizzleClient";
-
-// schema files
-import { blogs, images } from "./db/schema/blogs_and_images";
+// handler functions for routes
+import blogsGET from "./handlers/main_page/blogs/GET.js";
 
 // types and interfaces
 
 // server initialization
 const PORT = 3000;
-
 const server = Fastify({ logger: true });
 
-async function getBlogs() {
-  const allBlogs = await db.select().from(blogs);
-  return allBlogs;
-}
 // code action: Leader + la
-server.get("/", (request, response) => {
-  getBlogs().then((value) => {
-    response.send(value);
-  });
-});
+server.get("/", blogsGET);
 
 server.listen({ port: PORT }, (err, address) => {
   if (err) {
