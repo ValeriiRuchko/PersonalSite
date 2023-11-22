@@ -126,29 +126,29 @@ hr {
     }
 
     //
-    .trigger_left {
-      animation-name: hoverLeft;
+    .trigger_down {
+      animation-name: hoverDown;
       animation-duration: 1.5s;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
       animation-play-state: running;
     }
 
-    .cancel_left {
-      animation-name: cancelLeft;
+    .cancel_down {
+      animation-name: cancelDown;
       animation-play-state: running;
     }
 
-    .trigger_right {
-      animation-name: hoverRight;
+    .trigger_up {
+      animation-name: hoverUp;
       animation-duration: 1.5s;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
       animation-play-state: running;
     }
 
-    .cancel_right {
-      animation-name: cancelRight;
+    .cancel_up {
+      animation-name: cancelUp;
       animation-play-state: running;
     }
 
@@ -172,43 +172,43 @@ hr {
 }
 
 // description of animation for "animation" property
-@keyframes hoverLeft {
+@keyframes hoverDown {
   from {
-    transform: translateX(0vw);
+    transform: translateY(0vw);
   }
 
   to {
-    transform: translateX(50vw);
+    transform: translateY(23.5vw);
   }
 }
 
-@keyframes cancelLeft {
+@keyframes cancelDown {
   from {
-    transform: translateX(50vw);
+    transform: translateY(23.5vw);
   }
 
   to {
-    transform: translateX(0vw);
+    transform: translateY(0vw);
   }
 }
 
-@keyframes hoverRight {
+@keyframes hoverUp {
   from {
-    transform: translateX(0vw);
+    transform: translateY(0vw);
   }
 
   to {
-    transform: translateX(-50vw);
+    transform: translateY(-23.5vw);
   }
 }
 
-@keyframes cancelRight {
+@keyframes cancelUp {
   from {
-    transform: translateX(-50vw);
+    transform: translateY(-23.5vw);
   }
 
   to {
-    transform: translateX(0vw);
+    transform: translateY(0vw);
   }
 }
 

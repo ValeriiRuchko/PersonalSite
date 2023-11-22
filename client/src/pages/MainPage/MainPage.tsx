@@ -20,16 +20,16 @@ function MainPage(props: MainPageProps) {
 
   function triggerCardMove() {
     if (window.scrollY > 200) {
-      setLeft([...classesLeft, "trigger_left"]);
-      setRight([...classesRight, "trigger_right"]);
+      setLeft([...classesLeft, "trigger_down"]);
+      setRight([...classesRight, "trigger_up"]);
     }
 
     if (window.scrollY > 800 || window.scrollY === 0) {
       setLeft((prevState) => {
-        return [...prevState, "cancel_left"];
+        return [...prevState, "cancel_down"];
       });
       setRight((prevState) => {
-        return [...prevState, "cancel_right"];
+        return [...prevState, "cancel_up"];
       });
     }
   }
