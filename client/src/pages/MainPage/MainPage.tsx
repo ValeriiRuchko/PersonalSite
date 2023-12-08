@@ -3,18 +3,27 @@ import IntroCard from "../../components/IntroCard";
 import "../../styles/App.scss";
 
 import hammerIcon from "/hammer-solid.svg";
+import ProjectsList from "../../components/ProjectsList";
+import { Project } from "../../types/common_types";
+import ProjectsDescription from "../../components/ProjectsDescription";
 
 type MainPageProps = {
   className: string;
 };
 
 function MainPage(props: MainPageProps) {
+  // fetched projects from server
+  const [projects, setProjects] = useState<Array<Project>>([]);
+  const [shownProject, setShownProject] = useState("New project");
+
+  // --------------------------------------------------------
+  // animation classes
   const [classesLeft, setLeft] = useState([
-    "introduction_section_card",
+    "introduction_section__card",
     "left_card",
   ]);
   const [classesRight, setRight] = useState([
-    "introduction_section_card",
+    "introduction_section__card",
     "right_card",
   ]);
 
@@ -33,7 +42,7 @@ function MainPage(props: MainPageProps) {
       });
     }
   }
-
+  // intro-card animation effects
   useEffect(() => {
     window.addEventListener("scroll", triggerCardMove);
 
@@ -41,6 +50,18 @@ function MainPage(props: MainPageProps) {
     return () => {
       window.removeEventListener("scroll", triggerCardMove);
     };
+  }, []);
+  // --------------------------------------------------------
+  //
+  useEffect(() => {
+    fetch("http://localhost:3000/projects")
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((err) => {
+        console.log("FETCH ERROR: ", err);
+      });
   }, []);
 
   return (
@@ -74,6 +95,18 @@ function MainPage(props: MainPageProps) {
       <hr />
       <div className="projects_section">
         <h2>Projects and contributions</h2>
+        <div className="projects_section__content">
+          <ProjectsList
+            names={projects.map((elem) => {
+              return elem.name;
+            })}
+            setShownProject={setShownProject}
+          />
+          <ProjectsDescription
+            shownProject={shownProject}
+            projects={projects}
+          />
+        </div>
       </div>
     </div>
   );

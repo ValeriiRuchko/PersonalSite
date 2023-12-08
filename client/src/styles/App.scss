@@ -22,16 +22,6 @@ hr {
   flex-direction: column;
   flex-grow: 1;
   padding: 3% 5%;
-  h1 {
-    color: colors.$secondary-color;
-    max-width: 40rem;
-    font-size: 36px;
-  }
-  h2 {
-    color: colors.$secondary-color;
-    max-width: 36rem;
-    font-size: 28px;
-  }
 }
 // header styles -----
 .header_container {
@@ -56,7 +46,7 @@ hr {
   align-items: center;
   column-gap: 1rem;
   a {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
 }
 // ----- ----- -----
@@ -79,15 +69,15 @@ hr {
   display: flex;
   flex-direction: column;
   row-gap: 4rem;
-  padding: 4% 0;
+  padding: 4% 0%;
 
-  &_card {
+  &__card {
     width: 40vw;
     height: 35vh;
     border-radius: 30px;
     overflow: hidden;
 
-    &_title {
+    &__title {
       // display and position
       position: absolute;
       display: flex;
@@ -102,13 +92,9 @@ hr {
       // CRUCIAL FOR ANIMATION TO BE SUFFICIENT AND FOR CONTENT NOT TO CANCEL :hover
       z-index: 1;
 
-      // text
-      font-size: 36px;
-      color: colors.$primary-color-headings;
-
       background-color: colors.$secondary-color;
 
-      transition: all 1.5s;
+      transition: all 1s;
     }
 
     .left_card {
@@ -128,7 +114,7 @@ hr {
     //
     .trigger_down {
       animation-name: hoverDown;
-      animation-duration: 1.5s;
+      animation-duration: 1s;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
       animation-play-state: running;
@@ -141,7 +127,7 @@ hr {
 
     .trigger_up {
       animation-name: hoverUp;
-      animation-duration: 1.5s;
+      animation-duration: 1s;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
       animation-play-state: running;
@@ -152,7 +138,7 @@ hr {
       animation-play-state: running;
     }
 
-    &_content {
+    &__content {
       // display and position
       display: flex;
       justify-content: center;
@@ -164,9 +150,6 @@ hr {
       // size props
       width: 40vw;
       height: inherit;
-
-      color: colors.$primary-color;
-      font-size: 24px;
     }
   }
 }
@@ -218,7 +201,51 @@ hr {
 .projects_section {
   display: flex;
   flex-direction: column;
-  padding: 4% 0;
+  padding: 4% 0%;
+
+  height: 50%;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4%;
+
+    padding: 4% 0%;
+
+    justify-content: space-between;
+
+    &__names {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 1.5rem;
+
+      &__button {
+        background: none;
+        border: none;
+        color: colors.$primary-color-headings;
+      }
+    }
+
+    &__description {
+      text-wrap: wrap;
+      position: absolute;
+
+      max-width: 60vw;
+
+      transition: all 0.2s linear;
+      transform-origin: 100%;
+      transform: scaleX(0);
+
+      &__show {
+        transform: scaleX(1);
+      }
+    }
+
+    &__descriptions {
+      flex-basis: 60vw;
+    }
+  }
 }
 
 // ----- ----- -----
@@ -241,9 +268,15 @@ hr {
     display: flex;
     flex-flow: column;
     justify-content: center;
+
     a {
       text-decoration: underline;
     }
+  }
+
+  &_copyright > p {
+    color: colors.$primary-color-text;
+    font-size: 1rem;
   }
 
   &_socials {
@@ -265,4 +298,5 @@ hr {
     }
   }
 }
+
 // ----- ----- -----

@@ -7,6 +7,7 @@ import { FastifyRequest, FastifyReply } from "fastify";
 
 async function blogsGET(request: FastifyRequest, reply: FastifyReply) {
   const allBlogs = await db.select().from(blogs);
+  reply.header("Access-Control-Allow-Origin", "*");
   reply.send(allBlogs);
 }
 
