@@ -1,10 +1,11 @@
-import { pgTable, uuid, text, varchar } from "drizzle-orm/pg-core";
+import { pgTable, uuid, text, varchar, date } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 export const blogs = pgTable("blogs", {
     id: uuid("id").primaryKey().defaultRandom(),
     title: varchar("title", { length: 255 }),
     content: text("content"),
     time_to_read: varchar("time_to_read", { length: 255 }),
+    date_of_creation: date("date_of_creation").defaultNow(),
 });
 export const blogsRelations = relations(blogs, ({ many }) => ({
     images: many(images),

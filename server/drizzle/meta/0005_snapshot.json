@@ -1,8 +1,8 @@
 {
+  "id": "59ad3f27-951f-45e0-995e-47883461283a",
+  "prevId": "39899733-d81c-4b8d-befb-3d205044cfbf",
   "version": "5",
   "dialect": "pg",
-  "id": "e7766e82-a485-4f36-8c20-58695c96c720",
-  "prevId": "0043ef7d-57ed-4345-845b-4684952de27b",
   "tables": {
     "admin_data": {
       "name": "admin_data",
@@ -67,6 +67,13 @@
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false
+        },
+        "date_of_creation": {
+          "name": "date_of_creation",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
         }
       },
       "indexes": {},
@@ -166,12 +173,6 @@
           "type": "varchar(255)",
           "primaryKey": false,
           "notNull": false
-        },
-        "is_openSource": {
-          "name": "is_openSource",
-          "type": "boolean",
-          "primaryKey": false,
-          "notNull": false
         }
       },
       "indexes": {},
@@ -185,8 +186,6 @@
   "_meta": {
     "schemas": {},
     "tables": {},
-    "columns": {
-      "\"admin_data\".\"name\"": "\"admin_data\".\"login\""
-    }
+    "columns": {}
   }
 }

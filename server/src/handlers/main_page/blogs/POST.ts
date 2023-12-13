@@ -17,6 +17,9 @@ async function blogsPOST(request: FastifyRequest, reply: FastifyReply) {
       content: newProject.content,
       time_to_read: newProject.time_to_read,
     });
+    // todo - create new "image" in "images-table" with
+    // relation-id to blogs of newly created blog
+    // path will be path to AWS S3 storage
 
     reply.statusCode = 200;
     reply.send({

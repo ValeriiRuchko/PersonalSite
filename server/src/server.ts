@@ -2,19 +2,27 @@
 import Fastify from "fastify";
 import projectsGET from "./handlers/main_page/projects/GET.js";
 import projectsPOST from "./handlers/main_page/projects/POST.js";
-import {
-  POSTopts,
-  GETopts,
-  DELETEopts,
-  PATCHopts,
-} from "./route_schemas/projects_opts.js";
 import projectDELETE from "./handlers/main_page/projects/[project]/DELETE.js";
 import projectUPDATE from "./handlers/main_page/projects/[project]/PATCH.js";
+import {
+  POSTprojectsOpts,
+  GETprojectsOpts,
+  DELETEprojectsOpts,
+  PATCHprojectsOpts,
+} from "./route_schemas/projects_opts.js";
+
 import blogsGET from "./handlers/main_page/blogs/GET.js";
 import blogsPOST from "./handlers/main_page/blogs/POST.js";
 import blogGET from "./handlers/main_page/blogs/[blog]/GET.js";
 import blogsDELETE from "./handlers/main_page/blogs/[blog]/DELETE.js";
 import blogUPDATE from "./handlers/main_page/blogs/[blog]/PATCH.js";
+
+import {
+  GETblogsOpts,
+  POSTblogsOpts,
+  DELETEblogsOpts,
+  PATCHblogsOpts,
+} from "./route_schemas/blogs_opts.js";
 // handler functions for routes
 
 // types and interfaces
@@ -25,12 +33,12 @@ const server = Fastify({ logger: false });
 
 // code action: Leader + la
 
-server.get("/projects", GETopts, projectsGET);
-server.post("/projects", POSTopts, projectsPOST);
-server.delete("/projects/:name", DELETEopts, projectDELETE);
-server.patch("/projects/:name", PATCHopts, projectUPDATE);
+server.get("/projects", GETprojectsOpts, projectsGET);
+server.post("/projects", POSTprojectsOpts, projectsPOST);
+server.delete("/projects/:name", DELETEprojectsOpts, projectDELETE);
+server.patch("/projects/:name", PATCHprojectsOpts, projectUPDATE);
 
-server.get("/blogs", blogsGET);
+server.get("/blogs", GETblogsOpts, blogsGET);
 server.post("/blogs", blogsPOST);
 server.get("/blogs/:title", blogGET);
 server.delete("/blogs/:title", blogsDELETE);

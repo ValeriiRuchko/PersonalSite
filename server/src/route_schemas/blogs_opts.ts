@@ -15,18 +15,29 @@ const commonResponseSchema = {
   },
 };
 
-const GETprojectsOpts: RouteShorthandOptions = {
+const GETblogsOpts: RouteShorthandOptions = {
   schema: {
     response: {
       200: {
         type: "array",
         items: {
           type: "object",
-          required: ["name", "description"],
+          required: ["title", "content", "time_to_read"],
           properties: {
-            name: { type: "string" },
-            description: { type: "string" },
-            github_link: { type: "string" },
+            title: { type: "string" },
+            content: { type: "string" },
+            time_to_read: { type: "string" },
+            date_of_creation: { type: "string" },
+            images: {
+              type: "array",
+              items: {
+                type: "object",
+                required: ["image_path"],
+                properties: {
+                  image_path: { type: "string" },
+                },
+              },
+            },
           },
         },
       },
@@ -40,7 +51,7 @@ const GETprojectsOpts: RouteShorthandOptions = {
   },
 };
 
-const POSTprojectsOpts: RouteShorthandOptions = {
+const POSTblogsOpts: RouteShorthandOptions = {
   schema: {
     response: commonResponseSchema,
     body: {
@@ -55,7 +66,7 @@ const POSTprojectsOpts: RouteShorthandOptions = {
   },
 };
 
-const DELETEprojectsOpts: RouteShorthandOptions = {
+const DELETEblogsOpts: RouteShorthandOptions = {
   schema: {
     response: commonResponseSchema,
     params: {
@@ -67,7 +78,7 @@ const DELETEprojectsOpts: RouteShorthandOptions = {
   },
 };
 
-const PATCHprojectsOpts: RouteShorthandOptions = {
+const PATCHblogsOpts: RouteShorthandOptions = {
   schema: {
     response: commonResponseSchema,
     body: {
@@ -87,9 +98,4 @@ const PATCHprojectsOpts: RouteShorthandOptions = {
   },
 };
 
-export {
-  POSTprojectsOpts,
-  GETprojectsOpts,
-  DELETEprojectsOpts,
-  PATCHprojectsOpts,
-};
+export { POSTblogsOpts, GETblogsOpts, DELETEblogsOpts, PATCHblogsOpts };

@@ -12,18 +12,29 @@ const commonResponseSchema = {
         },
     },
 };
-const GETprojectsOpts = {
+const GETblogsOpts = {
     schema: {
         response: {
             200: {
                 type: "array",
                 items: {
                     type: "object",
-                    required: ["name", "description"],
+                    required: ["title", "content", "time_to_read"],
                     properties: {
-                        name: { type: "string" },
-                        description: { type: "string" },
-                        github_link: { type: "string" },
+                        title: { type: "string" },
+                        content: { type: "string" },
+                        time_to_read: { type: "string" },
+                        date_of_creation: { type: "string" },
+                        images: {
+                            type: "array",
+                            items: {
+                                type: "object",
+                                required: ["image_path"],
+                                properties: {
+                                    image_path: { type: "string" },
+                                },
+                            },
+                        },
                     },
                 },
             },
@@ -36,7 +47,7 @@ const GETprojectsOpts = {
         },
     },
 };
-const POSTprojectsOpts = {
+const POSTblogsOpts = {
     schema: {
         response: commonResponseSchema,
         body: {
@@ -50,7 +61,7 @@ const POSTprojectsOpts = {
         },
     },
 };
-const DELETEprojectsOpts = {
+const DELETEblogsOpts = {
     schema: {
         response: commonResponseSchema,
         params: {
@@ -61,7 +72,7 @@ const DELETEprojectsOpts = {
         },
     },
 };
-const PATCHprojectsOpts = {
+const PATCHblogsOpts = {
     schema: {
         response: commonResponseSchema,
         body: {
@@ -80,5 +91,5 @@ const PATCHprojectsOpts = {
         },
     },
 };
-export { POSTprojectsOpts, GETprojectsOpts, DELETEprojectsOpts, PATCHprojectsOpts, };
-//# sourceMappingURL=projects_opts.js.map
+export { POSTblogsOpts, GETblogsOpts, DELETEblogsOpts, PATCHblogsOpts };
+//# sourceMappingURL=blogs_opts.js.map
