@@ -10,7 +10,7 @@ import blogGET from "./handlers/main_page/blogs/[blog]/GET.js";
 import blogsDELETE from "./handlers/main_page/blogs/[blog]/DELETE.js";
 import blogUPDATE from "./handlers/main_page/blogs/[blog]/PATCH.js";
 import { GETblogsOpts, } from "./route_schemas/blogs_opts.js";
-const PORT = 3000;
+const PORT = 3002;
 const server = Fastify({ logger: false });
 server.get("/projects", GETprojectsOpts, projectsGET);
 server.post("/projects", POSTprojectsOpts, projectsPOST);
@@ -21,7 +21,7 @@ server.post("/blogs", blogsPOST);
 server.get("/blogs/:title", blogGET);
 server.delete("/blogs/:title", blogsDELETE);
 server.patch("/blogs/:name", blogUPDATE);
-server.listen({ port: PORT }, (err, address) => {
+server.listen({ port: PORT, host: "0.0.0.0" }, (err, address) => {
     if (err) {
         console.error(err);
         process.exit(1);

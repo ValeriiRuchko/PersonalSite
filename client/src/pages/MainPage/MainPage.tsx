@@ -54,7 +54,7 @@ function MainPage(props: MainPageProps) {
   // --------------------------------------------------------
   //
   useEffect(() => {
-    fetch("http://localhost:3000/projects")
+    fetch("http://localhost:3002/projects")
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);

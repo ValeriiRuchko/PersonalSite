@@ -28,7 +28,7 @@ import {
 // types and interfaces
 
 // server initialization
-const PORT = 3000;
+const PORT = 3002;
 const server = Fastify({ logger: false });
 
 // code action: Leader + la
@@ -44,7 +44,7 @@ server.get("/blogs/:title", blogGET);
 server.delete("/blogs/:title", blogsDELETE);
 server.patch("/blogs/:name", blogUPDATE);
 
-server.listen({ port: PORT }, (err, address) => {
+server.listen({ port: PORT, host: "0.0.0.0" }, (err, address) => {
   if (err) {
     console.error(err);
     process.exit(1);
