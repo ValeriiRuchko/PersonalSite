@@ -16,6 +16,7 @@ hr {
   flex-direction: column;
   min-height: 100vh;
 }
+
 // I have to apply this style to every page in order for main content to fill out the whole page
 .main_content {
   display: flex;
@@ -23,6 +24,7 @@ hr {
   flex-grow: 1;
   padding: 3% 5%;
 }
+
 // header styles -----
 .header_container {
   background-color: colors.$primary-color;
@@ -34,6 +36,7 @@ hr {
   padding: 2%;
   color: colors.$primary-color-text;
 }
+
 // I target all <img> elements inside element with class "header_logo"
 .header_logo {
   img {
@@ -45,10 +48,12 @@ hr {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+
   a {
     font-size: 1.25rem;
   }
 }
+
 // ----- ----- -----
 
 // MAIN PAGE STYLES START ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -203,12 +208,14 @@ hr {
   flex-direction: column;
   padding: 4% 0%;
 
-  height: 50%;
+  height: 50vh;
 
   &__content {
     display: flex;
     flex-direction: row;
     column-gap: 4%;
+
+    height: inherit;
 
     padding: 4% 0%;
 
@@ -228,10 +235,15 @@ hr {
     }
 
     &__description {
+      display: flex;
+      flex-wrap: wrap;
+
       text-wrap: wrap;
       position: absolute;
 
       max-width: 60vw;
+
+      height: calc(100% / 4.1);
 
       transition: all 0.2s linear;
       transform-origin: 100%;
@@ -239,6 +251,12 @@ hr {
 
       &__show {
         transform: scaleX(1);
+      }
+
+      a {
+        color: colors.$secondary-color !important;
+        font-size: 1.25rem;
+        text-decoration: underline;
       }
     }
 
@@ -274,7 +292,7 @@ hr {
     }
   }
 
-  &_copyright > p {
+  &_copyright>p {
     color: colors.$primary-color-text;
     font-size: 1rem;
   }

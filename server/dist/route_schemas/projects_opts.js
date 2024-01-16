@@ -24,6 +24,7 @@ const GETprojectsOpts = {
                         name: { type: "string" },
                         description: { type: "string" },
                         github_link: { type: "string" },
+                        technologies: { type: "string" },
                     },
                 },
             },
@@ -46,6 +47,7 @@ const POSTprojectsOpts = {
                 name: { type: "string" },
                 description: { type: "string" },
                 github_link: { type: "string" },
+                technologies: { type: "string" },
             },
         },
     },
@@ -70,6 +72,7 @@ const PATCHprojectsOpts = {
                 name: { type: "string" },
                 description: { type: "string" },
                 github_link: { type: "string" },
+                technologies: { type: "string" },
             },
         },
         params: {

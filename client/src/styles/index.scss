@@ -43,6 +43,7 @@ h1 {
   max-width: 50rem;
   font-size: 2.5rem;
 }
+
 h2 {
   color: colors.$secondary-color;
   font-size: 2rem;
@@ -54,6 +55,12 @@ h3 {
 }
 
 h4 {
-  color: colors.$secondary-color-borders;
+  color: colors.$primary-color-headings;
+  font-size: 1.5rem;
+}
+
+h5 {
+  color: colors.$primary-color-headings;
+  text-decoration: underline;
   font-size: 1.5rem;
 }

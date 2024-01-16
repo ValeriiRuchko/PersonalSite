@@ -14,7 +14,7 @@ type MainPageProps = {
 function MainPage(props: MainPageProps) {
   // fetched projects from server
   const [projects, setProjects] = useState<Array<Project>>([]);
-  const [shownProject, setShownProject] = useState("New project");
+  const [shownProject, setShownProject] = useState("PlantDev.io");
 
   // --------------------------------------------------------
   // animation classes

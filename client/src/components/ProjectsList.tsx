@@ -8,7 +8,7 @@ type ProjectsListProps = {
 function ProjectsList(props: ProjectsListProps) {
   const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    console.log("Event value", event.currentTarget.value);
+    // console.log("Event value", event.currentTarget.value);
     props.setShownProject(event.currentTarget.value);
   };
 

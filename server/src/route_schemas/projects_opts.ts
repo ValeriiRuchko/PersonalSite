@@ -27,6 +27,7 @@ const GETprojectsOpts: RouteShorthandOptions = {
             name: { type: "string" },
             description: { type: "string" },
             github_link: { type: "string" },
+            technologies: { type: "string" },
           },
         },
       },
@@ -50,6 +51,7 @@ const POSTprojectsOpts: RouteShorthandOptions = {
         name: { type: "string" },
         description: { type: "string" },
         github_link: { type: "string" },
+        technologies: { type: "string" },
       },
     },
   },
@@ -76,6 +78,7 @@ const PATCHprojectsOpts: RouteShorthandOptions = {
         name: { type: "string" },
         description: { type: "string" },
         github_link: { type: "string" },
+        technologies: { type: "string" },
       },
     },
     params: {

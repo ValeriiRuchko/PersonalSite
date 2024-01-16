@@ -1,4 +1,4 @@
-import { Project } from "../types/common_types";
+import { Project } from "../@types/common_types";
 
 type ProjectsDescrProps = {
   projects: Project[];
@@ -10,24 +10,32 @@ function ProjectsDescription(props: ProjectsDescrProps) {
     <div className="projects_section__content__descriptions">
       {props.projects.map((elem, index) => {
         return elem.name === props.shownProject ? (
-          <p
+          <div
             className={`
           projects_section__content__description 
           projects_section__content__description__show
           `}
             key={index}
           >
-            {elem.description}
-          </p>
+            <h5>{elem.name}</h5>
+            <p>{elem.description}</p>
+
+            <a href={`${elem.github_link}`}>
+              <em>Github</em>
+            </a>
+          </div>
         ) : (
-          <p
+          <div
             className={`
           projects_section__content__description 
           `}
             key={index}
           >
-            {elem.description}
-          </p>
+            <p>{elem.description}</p>
+            <a href={`${elem.github_link}`}>
+              <em>Github</em>
+            </a>
+          </div>
         );
       })}
     </div>

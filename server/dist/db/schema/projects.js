@@ -4,5 +4,6 @@ export const projects = pgTable("projects", {
     name: varchar("name", { length: 255 }),
     description: text("description"),
     github_link: varchar("github_link", { length: 255 }),
+    technologies: varchar("technologies", { length: 255 }),
 });
 //# sourceMappingURL=projects.js.map
