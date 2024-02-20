@@ -226,6 +226,8 @@ hr {
       flex-direction: column;
       align-items: flex-start;
       row-gap: 1.5rem;
+      text-decoration: underline;
+      text-decoration-color: colors.$primary-color-headings;
 
       &__button {
         background: none;
@@ -262,6 +264,105 @@ hr {
 
     &__descriptions {
       flex-basis: 60vw;
+    }
+  }
+}
+
+// ----- ----- -----
+
+// my blogs section
+
+.blogs_section {
+  display: flex;
+  flex-direction: column;
+  padding: 4% 0%;
+
+  height: 60vh;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4%;
+
+    height: inherit;
+
+    padding: 4% 0%;
+
+    justify-content: space-between;
+  }
+
+  &__small_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+
+    width: 25vw;
+  }
+
+  &__image {
+    height: auto;
+    max-height: 25vh;
+    width: auto;
+    max-width: 25vw;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text>p {
+    font-size: 1rem;
+  }
+}
+
+// ----- ----- -----
+
+// contact me section
+.contact_me_section {
+  display: flex;
+  flex-direction: column;
+  padding: 4% 0%;
+
+  height: 60vh;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4%;
+
+    height: inherit;
+
+    padding: 4% 0%;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-rows: 0.4fr 2fr 0.3fr;
+    row-gap: 4%;
+    column-gap: 4%;
+
+    width: 50vw;
+
+    &__button {
+      background-color: colors.$primary-color-headings;
+      border-width: 0;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    &__button:hover {
+      border-width: 1;
+      background-color: colors.$secondary-color;
     }
   }
 }

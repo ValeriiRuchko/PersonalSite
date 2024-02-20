@@ -6,11 +6,7 @@ import { blogs } from "#db_schema/blogs_and_images";
 import { FastifyRequest, FastifyReply } from "fastify";
 
 async function blogsGET(request: FastifyRequest, reply: FastifyReply) {
-  const allBlogs = await db.query.blogs.findMany({
-    with: {
-      images: true,
-    },
-  });
+  const allBlogs = await db.select().from(blogs);
   reply.header("Access-Control-Allow-Origin", "*");
   reply.send(allBlogs);
 }

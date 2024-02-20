@@ -15,7 +15,7 @@ function Header() {
         </div>
         <div className="header_navlinks">
           <Link to="/">About me</Link>
-          <Link to="blog">Blog</Link>
+          <Link to="blogs">Blog</Link>
         </div>
       </div>
     </div>

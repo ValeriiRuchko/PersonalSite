@@ -28,16 +28,7 @@ const GETblogsOpts: RouteShorthandOptions = {
             content: { type: "string" },
             time_to_read: { type: "string" },
             date_of_creation: { type: "string" },
-            images: {
-              type: "array",
-              items: {
-                type: "object",
-                required: ["image_path"],
-                properties: {
-                  image_path: { type: "string" },
-                },
-              },
-            },
+            title_image_path: { type: "string" },
           },
         },
       },

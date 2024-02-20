@@ -4,8 +4,10 @@ import "../../styles/App.scss";
 
 import hammerIcon from "/hammer-solid.svg";
 import ProjectsList from "../../components/ProjectsList";
-import { Project } from "../../types/common_types";
+import { Project } from "../../@types/common_types";
 import ProjectsDescription from "../../components/ProjectsDescription";
+import BlogMainPageCard from "../../components/BlogMainPageCard";
+import ContactForm from "../../components/ContactForm";
 
 type MainPageProps = {
   className: string;
@@ -52,7 +54,6 @@ function MainPage(props: MainPageProps) {
     };
   }, []);
   // --------------------------------------------------------
-  //
   useEffect(() => {
     fetch("http://localhost:3002/projects")
       .then((res) => res.json())
@@ -106,6 +107,26 @@ function MainPage(props: MainPageProps) {
             shownProject={shownProject}
             projects={projects}
           />
+        </div>
+      </div>
+      <hr />
+      <div className="blogs_section">
+        <h2>Featured blogs</h2>
+        <div className="blogs_section__content">
+          <BlogMainPageCard />
+        </div>
+      </div>
+      <hr />
+      <div className="contact_me_section">
+        <h2>Contact me:</h2>
+        <div className="contact_me_section__content">
+          <ContactForm />
+          <div className="contact_me_section__message">
+            <p>
+              Feel free to write to me if you have any questions and I will try
+              to respond to you as quickly as possible!
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -17,6 +17,8 @@ import blogGET from "./handlers/main_page/blogs/[blog]/GET.js";
 import blogsDELETE from "./handlers/main_page/blogs/[blog]/DELETE.js";
 import blogUPDATE from "./handlers/main_page/blogs/[blog]/PATCH.js";
 
+import contact_formPOST from "./handlers/main_page/contact_form/POST.js";
+
 import {
   GETblogsOpts,
   POSTblogsOpts,
@@ -43,6 +45,8 @@ server.post("/blogs", blogsPOST);
 server.get("/blogs/:title", blogGET);
 server.delete("/blogs/:title", blogsDELETE);
 server.patch("/blogs/:name", blogUPDATE);
+
+server.post("/contact_form", contact_formPOST);
 
 server.listen({ port: PORT, host: "0.0.0.0" }, (err, address) => {
   if (err) {

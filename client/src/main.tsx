@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <App className="App" />,
     children: [
       {
-        path: "blog",
+        path: "blogs",
         element: <Blogs className="main_content" />,
       },
     ],

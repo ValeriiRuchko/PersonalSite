@@ -1,1 +1,20 @@
-{"version":"5","dialect":"pg","entries":[{"idx":5,"version":"5","when":1702308139290,"tag":"0005_ambiguous_red_skull","breakpoints":true}]}
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1702308139290,
+      "tag": "0005_ambiguous_red_skull",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1707919924520,
+      "tag": "0006_amused_doorman",
+      "breakpoints": true
+    }
+  ]
+}
