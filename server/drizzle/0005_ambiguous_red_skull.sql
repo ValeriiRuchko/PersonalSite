@@ -1,1 +1,0 @@
-ALTER TABLE "blogs" ALTER COLUMN "date_of_creation" SET DEFAULT now();

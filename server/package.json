@@ -13,10 +13,10 @@
   },
   "type": "module",
   "dependencies": {
-    "@types/node": "^20.11.17",
-    "drizzle-orm": "^0.29.3",
-    "fastify": "^4.26.1",
-    "postgres": "^3.4.3"
+    "@types/node": "^20.11.30",
+    "drizzle-orm": "^0.30.5",
+    "fastify": "^4.26.2",
+    "postgres": "^3.4.4"
   },
   "devDependencies": {
     "drizzle-kit": "^0.20.14",

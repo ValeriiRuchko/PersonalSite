@@ -3,17 +3,10 @@
   "dialect": "pg",
   "entries": [
     {
-      "idx": 5,
+      "idx": 0,
       "version": "5",
-      "when": 1702308139290,
-      "tag": "0005_ambiguous_red_skull",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "5",
-      "when": 1707919924520,
-      "tag": "0006_amused_doorman",
+      "when": 1711638759578,
+      "tag": "0000_naive_energizer",
       "breakpoints": true
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "id": "59ad3f27-951f-45e0-995e-47883461283a",
-  "prevId": "39899733-d81c-4b8d-befb-3d205044cfbf",
+  "id": "3f3b0bf0-1561-441b-a230-51554c5781f1",
+  "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -74,33 +74,10 @@
           "primaryKey": false,
           "notNull": false,
           "default": "now()"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "images": {
-      "name": "images",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "uuid",
-          "primaryKey": true,
-          "notNull": true,
-          "default": "gen_random_uuid()"
         },
-        "image_path": {
-          "name": "image_path",
+        "title_image_path": {
+          "name": "title_image_path",
           "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "related_blog_id": {
-          "name": "related_blog_id",
-          "type": "uuid",
           "primaryKey": false,
           "notNull": false
         }
@@ -184,8 +161,8 @@
   "enums": {},
   "schemas": {},
   "_meta": {
+    "columns": {},
     "schemas": {},
-    "tables": {},
-    "columns": {}
+    "tables": {}
   }
 }
